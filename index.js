@@ -18,62 +18,62 @@ app.get('/categories', function (req, res) {
       res.status(200).json({ response:categories })
     })
     .catch((err) => {
-      res.status(404).json({ response:err })
+      res.status(404).send(err);
     })
 })
 
 app.post('/learn', function (req, res) {
   if (!req.body.category || !req.body.phrase) {
-    res.status(404).json({ response:'Check usage.' })
+    res.status(403).json({ response:'Check usage.' })
   } else {
     lazy.learn({phrase: req.body.phrase, category: req.body.category})
       .then(() => {
         res.status(200).json({ response:req.body })
       })
       .catch((err) => {
-        res.status(404).json({ response:err })
+        res.status(404).send(err);
       })
   }
 })
 
 app.post('/forget', function (req, res) {
   if (!req.body.category || !req.body.phrase) {
-    res.status(404).json({ response:'Check usage.' })
+    res.status(403).json({ response:'Check usage.' })
   } else {
     lazy.removeDocument({phrase: req.body.phrase, category: req.body.category})
       .then(() => {
         res.status(200).json({ response:req.body })
       })
       .catch((err) => {
-        res.status(404).json({ response:err })
+        res.status(404).send(err);
       })
   }
 })
 
 app.post('/response', function (req, res) {
   if (!req.body.response || !req.body.category) {
-    res.status(404).json({ response:'Check usage.' })
+    res.status(403).json({ response:'Check usage.' })
   } else {
     lazy.addResponse({response: req.body.response, category: req.body.category})
       .then(() => {
         res.status(200).json({ response:req.body })
       })
       .catch((err) => {
-         res.status(404).json({ response:err })
+         res.status(404).send(err);
       })
   }
 })
 
 app.post('/query', function (req, res) {
   if (!req.body.phrase) {
-    res.status(404).json({ response:'Check usage.' })
+    res.status(403).json({ response:'Check usage.' })
   } else {
     lazy.query({phrase: req.body.phrase})
       .then((response) => {
         res.status(200).json({ response })
       })
       .catch((err) => {
-         res.status(404).json({ response:err })
+         res.status(404).send(err);
       })
   }
 })
@@ -94,12 +94,13 @@ app.get('/load', function (req, res) {
 })
 
 app.get('/responses/:category', function (req, res) {
+  console.log(req.params.category);
   lazy.getResponses({category: req.params.category})
     .then((responses) => {
-      res.status(200).json({ response:categories })
+      res.status(200).json({ response:responses })
     })
     .catch((err) => {
-      res.status(404).json({ response:err })
+      res.status(404).send(err);
     })
 })
 
