@@ -10,8 +10,8 @@
 
 You can try in telegram already: Lets chat with @LazyAIBot, my Turkish friends already teached somethings like as greetings.
 If you want host on your own, go ahead do this!
-[Create telegram bot.](https://core.telegram.org/bots#6-botfather)
 
+[Create telegram bot](https://core.telegram.org/bots#6-botfather)
 
 [Telegram Bot Deploy](https://github.com/cagataycali/lazy-telegram):
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/cagataycali/lazy-telegram)
@@ -19,13 +19,10 @@ If you want host on your own, go ahead do this!
 [Express HTTP Endpoint Deploy](https://github.com/cagataycali/lazy-telegram):
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/cagataycali/lazy-express)
 
-## Programmatic Usages
 
-Lazy already integrated in nodejs and ruby.
+---
 
-## NodeJS
-
-> Native *
+### Node Usage
 
 ```bash
 # Or npm install --save lazy.ai
@@ -55,7 +52,7 @@ start();
 ```
 
 
-## Ruby
+### Ruby Usage
 
 ```bash
 # Or Gemfile --> gem 'lazy.ai', '~> 0.0.1'
@@ -197,6 +194,6 @@ GET /responses/:category
 
 ## License & Contributors
 
-[Special thanks for ruby client:](https://github.com/Yengas)
+[Special thanks for ruby client @Yengas](https://github.com/Yengas)
 
 MIT © [cagataycali](https://cagatay.me)
