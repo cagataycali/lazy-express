@@ -194,7 +194,7 @@ GET /responses/:category
 
 ## Contributors
 
->Special thanks for ruby client:
+Special thanks for ruby client:
 <a href="https://github.com/Yengas">Yiğitcan Uçum @Yengas </a>
 
 ## License
