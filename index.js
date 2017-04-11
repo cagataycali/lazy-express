@@ -64,6 +64,20 @@ app.post('/response', function (req, res) {
   }
 })
 
+app.post('/action', function (req, res) {
+  if (!req.body.actions || !req.body.category) {
+    res.status(403).json({ response:'Check usage.' })
+  } else {
+    lazy.addAction({actions: req.body.actions, category: req.body.category})
+      .then(() => {
+        res.status(200).json({ response:req.body })
+      })
+      .catch((err) => {
+         res.status(404).send(err);
+      })
+  }
+})
+
 app.post('/query', function (req, res) {
   if (!req.body.phrase) {
     res.status(403).json({ response:'Check usage.' })
