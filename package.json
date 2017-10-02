@@ -11,10 +11,13 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.14.0",
-    "lazy.ai": "^2.0.1"
+    "lazy.ai": "^2.0.1",
+    "snyk": "^1.42.3"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/cagataycali/lazy-express/issues"
   },
-  "homepage": "https://github.com/cagataycali/lazy-express#readme"
+  "homepage": "https://github.com/cagataycali/lazy-express#readme",
+  "snyk": true
 }
