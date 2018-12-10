@@ -9,8 +9,8 @@
     "node": "6.x"
   },
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.14.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.0",
     "lazy.ai": "^2.0.1"
   },
   "scripts": {
